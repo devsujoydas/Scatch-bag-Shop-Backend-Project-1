@@ -8,7 +8,6 @@ const onwerSchema = mongoose.Schema({
     },
     email: String,
     password: String,
-    contact: String,
     picture: String,
     cart: {
         type: Array,

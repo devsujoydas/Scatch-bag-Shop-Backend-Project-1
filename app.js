@@ -27,10 +27,6 @@ app.use("/onwers", onwersRouter)
 app.use("/users", usersRouter)
 app.use("/products", productsRouter)
 
-app.get("/", async (req, res) => {
-    res.render("index")
-})
-
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`)
