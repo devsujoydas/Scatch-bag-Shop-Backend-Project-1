@@ -5,7 +5,7 @@ const onwerModel = require('../models/owner-model');
 if (process.env.NODE_ENV === "development") {
     router.post("/create", async (req, res) => {
         let onwers = await onwerModel.find()
-        if (onwers.length > 0) {
+        if (onwers.length > 1) {
             return res
                 .status(504)
                 .send("You dont have permission to create a new onwer")
