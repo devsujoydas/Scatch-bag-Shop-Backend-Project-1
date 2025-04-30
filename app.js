@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 
 // imports database connection and Routers from local
 const db = require('./config/mongoose-connection');
+const index = require('./routes/index');
 const onwersRouter = require('./routes/onwersRouter');
 const usersRouter = require('./routes/usersRouter');
 const productsRouter = require('./routes/productsRouter');
@@ -23,6 +24,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "public")))
 
+app.use("/", index)
 app.use("/onwers", onwersRouter)
 app.use("/users", usersRouter)
 app.use("/products", productsRouter)

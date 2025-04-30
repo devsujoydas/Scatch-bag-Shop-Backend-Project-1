@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const onwerModel = require('../models/owner-model');
 
+
 if (process.env.NODE_ENV === "development") {
     router.post("/create", async (req, res) => {
         let onwers = await onwerModel.find()
@@ -24,8 +25,9 @@ if (process.env.NODE_ENV === "development") {
 }
 
 
+
 router.get("/", (req, res) => {
-    res.send("hey this is onwerRouter")
+    res.render("index")
 })
 
 
